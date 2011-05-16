@@ -1,3 +1,9 @@
 heroku config:add SESSION_SECRET=`ruby -e 'require "rubygems" ; require "active_support" ; \
    puts ActiveSupport::SecureRandom.hex(40)'` 
 
+heroku config:add S3_ACCESS_KEY=$AMAZON_ACCESS_KEY_ID S3_SECRET_KEY=$AMAZON_SECRET_ACCESS_KEY S3_BUCKET_NAME=`ruby -e 'require "rubygems" ; require "active_support" ; \
+   puts "chiliheroku-#{ActiveSupport::SecureRandom.hex(10)}"'`
+
+heroku addons:upgrade logging:expanded
+heroku addons:add sendgrid:free
+heroku addons:add ssl:piggyback

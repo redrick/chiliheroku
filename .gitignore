@@ -22,3 +22,5 @@
 /vendor/rails
 *.rbc
 doc/app
+/.bundlevendor/plugins/redmine_s3
+/.bundle
