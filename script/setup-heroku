@@ -1,0 +1,3 @@
+heroku config:add SESSION_SECRET=`ruby -e 'require "rubygems" ; require "active_support" ; \
+   puts ActiveSupport::SecureRandom.hex(40)'` 
+
