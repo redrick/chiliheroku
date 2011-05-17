@@ -1,0 +1,2 @@
+heroku rake db:migrate
+heroku rake redmine:load_default_data REDMINE_LANG=en
