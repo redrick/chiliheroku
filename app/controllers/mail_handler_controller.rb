@@ -26,6 +26,7 @@ class MailHandlerController < ActionController::Base
   def index
     options = params.dup
     email = options.delete(:email)
+    email = options.delete(:message) if email.nil? # for cloudmailin
     if MailHandler.receive(email, options)
       render :nothing => true, :status => :created
     else
